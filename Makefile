@@ -40,7 +40,7 @@ ADDITIONAL_FLAGS = -O3 -DASM_PREAMBLE -DAPPLY_PATCHES -DVERBOSE
 #NOTE: 
 #the ASM_PREAMBLE macro enables building a demo patch for each memory access instruction
 #which passess control to a trampoline that calls the the_patch(...) fuction
-#offered by the MVM package (see patch/patch.c)
+#offered by the MVM package (see patchs/patchs.c)
 #the APPLY_PATCHES macro actually leads to apply the patches thar are build by the instrumentation process
 #the VERBOSE macro simply leads to the massive production of output messages 
 
