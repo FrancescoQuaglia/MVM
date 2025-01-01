@@ -5,7 +5,17 @@ MVM (Mov Virtual Machine) is a compile/runtime environment for C programs
 It works with ELF/x86 binary files, and requires gcc/ld and a few additional
 standard programs offered by Posix systems (e.g. objdump and awk)
 
-It allows instrumenting any memory load/store instruction
+It allows instrumenting any memory load/store instruction that accesses data
+in the heap
+
+Accesses to stack locations based on stack/base-pointer displacement are 
+not instrumented
+
+The same takes place for accesses to TLS based on displacement applied to 
+segment selector register
+
+In any case, for both the above memory areas (stack and TLS), accesses based 
+on pointers to memory are instrumented
 
 Makefile reports how to exploit via a compilation flag a default C-based 
 instrumentation function that gets executed right before the instrumented 
@@ -25,7 +35,7 @@ The github repo of this projects currently delivers an example of user-defined
 instrumentation of store instructions that simply reports the stored value in an 
 additional memory location in the address space, at distance 2^{21} from the 
 original (heap located) memory cell where the store takes place. 
-This type of instrumentation has been explited in the "PARSIR ubiquitous" 
+This type of instrumentation has been explited in the "NUMA-ubiquitous" 
 configuration of the PARSIR package for NUMA machines
 To run it just type "make ; ./application/prog" without any change to the Makefile
 delivered with MVM

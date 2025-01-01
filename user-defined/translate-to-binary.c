@@ -12,7 +12,6 @@ int main() {
     unsigned int value;
 
     // Get user input - a sequence of hexadecimal characters (e.g., '89 90 00 00 20 00')
-//    printf("Enter hexadecimal instruction bytes (e.g., '89 90 00 00 20 00'): ");
     fgets(input, sizeof(input), stdin);
 
     // Remove newline character if present
@@ -26,24 +25,9 @@ int main() {
     }
 
     // Output the result - the raw instruction in binary (hex format)
-//    printf("Raw instruction in memory (bytes):\n");
     for (int i = 0; i < byteCount; i++) {
 	write(1,&instruction[i],1);
-     //   printf("0x%02X ", instruction[i]);
     }
- //   printf("\n");
-
-	return 0;
-
-    // Optionally, print the instruction as raw binary (bits)
-    printf("Raw instruction in binary (bitwise representation):\n");
-    for (int i = 0; i < byteCount; i++) {
-        for (int j = 7; j >= 0; j--) {  // Print each bit of each byte
-            printf("%d", (instruction[i] >> j) & 1);
-        }
-        printf(" ");
-    }
-    printf("\n");
 
     return 0;
 }
