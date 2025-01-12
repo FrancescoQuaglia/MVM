@@ -35,7 +35,7 @@ The github repo of this projects currently delivers an example of user-defined
 instrumentation of store instructions that simply reports the stored value in an 
 additional memory location in the address space, at distance 2^{21} from the 
 original (heap located) memory cell where the store takes place. 
-This type of instrumentation has been explited in the "NUMA-ubiquitous" 
+This type of instrumentation has been exploited in the "NUMA-ubiquitous" 
 configuration of the PARSIR package for NUMA machines
 To run it just type "make ; ./application/prog" without any change to the Makefile
 delivered with MVM
