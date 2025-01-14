@@ -1,6 +1,6 @@
-# MVM (Mov Virtual Machine) 
+# MVM (Memory Virtual Machine) 
 
-MVM (Mov Virtual Machine) is a compile/runtime environment for C programs 
+MVM (Memory Virtual Machine) is a compile/runtime environment for C programs 
 
 It works with ELF/x86 binary files, and requires gcc/ld and a few additional
 standard programs offered by Posix systems (e.g. objdump and awk)
